@@ -4,4 +4,10 @@ feature "Attacking player" do
     click_link 'Attack'
     expect(page).to have_text("Sarah attacked Aman")
   end
+
+  scenario 'Reduces player 2 HP by 10' do
+    sign_in_and_play
+    click_link 'Attack'
+    expect(page).to have_text('Amans HP is now 90')
+  end
 end
