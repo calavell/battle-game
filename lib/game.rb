@@ -12,14 +12,18 @@ class Game
 
   def attack(player)
     player.receive_damage
-    @counter += 1
+    increase_turn
   end
 
-  # def player_1_turn?
-  #   @counter.even? = @player_1
-  #   @counter.odd? = @player_2
-  # end
+  def current_turn
+    return @player_1.name if counter.even?
+    return @player_2.name if counter.odd?
+  end
 
+  private
 
+  def increase_turn
+    @counter += 1
+  end
 
 end
