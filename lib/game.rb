@@ -16,8 +16,7 @@ class Game
   end
 
   def current_turn
-    return @player_1.name if counter.even?
-    return @player_2.name if counter.odd?
+    counter.even? ? @player_1.name : @player_2.name
   end
 
   private
